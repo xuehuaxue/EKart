@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <button class="btn btn-warning" [routerLink]='["/sellerProfile/newProduct"]'>New Product</button>
+  <h4>Tips: Remeber to check for your recent orders!</h4>
+  <div class="col-md-4" *ngFor="let prod of productList; let i = index" style="margin-top:40px;">
+
+    <img src="https://picsum.photos/150/150/?random{{prod.name}}">
+    <a (click)="modifyProduct(prod.productId)" style="cursor:pointer">
+      <h4 style="margin-bottom:2px;">{{ prod.name }}</h4>
+    </a>
+    by {{prod.brand}}
+    <br>
+    <h4 style="display:inline">{{prod.price | currency:usd:true}}</h4>
+    <br>
+    <h4 class="text text-danger" style="display:inline;">+{{prod.discount}}%</h4> discount
+    <p style="height:150px; width:200px; text-overflow: ellipsis;">
+      <b>Description:</b>
+      <br>{{ prod.description}}
+    </p>
+  </div>
+</div>

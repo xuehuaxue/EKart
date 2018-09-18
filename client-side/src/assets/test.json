@@ -1,0 +1,9 @@
+[
+{"name": "Iphone X", "productId":"1", "description":"world's leading IOS smart phone", "category":"cellphone", "brand":"apple", "price":"1050", "discount":"5", "quantity":"20"},
+{"name": "Samsung Galaxy s9", "productId":"2", "description":"it won't explode again", "category":"cellphone", "brand":"Samsung", "price":"910.00", "discount":"5", "quantity":"45"},
+{"name": "Micheal Khors handbag", "productId":"6", "description":"fashion", "category":"cloth/accessory", "brand":"MK", "price":"170.50", "discount":"25", "quantity":"200"},
+{"name": "The North Face Coat", "productId":"17", "description":"the best partner for winter", "category":"Cloth/Accessory", "brand":"The North Face ", "price":"225.00", "discount":"50", "quantity":"200"},
+{"name": "Macbook", "productId":"23", "description":"this is the macbook", "category":"laptop", "brand":"apple ", "price":"2225.00", "discount":"10", "quantity":"10"},
+{"name": "LG LV30", "productId":"93", "description":"this is the lg's newest smartphone", "category":"mobile", "brand":"lg ", "price":"925.00", "discount":"5", "quantity":"10"}
+
+]

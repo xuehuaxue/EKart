@@ -1,0 +1,20 @@
+<div class="container" style="padding-top:20px;">
+  <div class="row">
+    <h4>Tips: We have new stock everyday!</h4>
+    <div class="col-md-3 product"  style="margin-bottom:5%; margin-top:3%;" *ngFor="let prod of productList; let i = index" (click)="showDetail=!showDetail">
+
+      <img src="https://picsum.photos/150/150/?random{{i}}">
+      <a style="cursor:pointer">
+        <h4 style="margin-bottom:2px;">{{ prod.name }}</h4>
+      </a>
+      by {{prod.brand}}
+      <br>
+      <h4 style="display:inline">{{prod.price | currency:usd:true}}</h4>
+      <br>
+      <h4 class="text text-danger" style="display:inline;">+{{prod.discount}}%</h4> discount
+      <div *ngIf="showDetail"style="height:50px; width:200px; text-overflow: ellipsis;">
+        {{ prod.description}}
+      </div>
+    </div>
+  </div>
+</div>

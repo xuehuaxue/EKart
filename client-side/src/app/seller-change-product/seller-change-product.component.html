@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-5 col-md-offset-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Modify My Products</div>
+            <div class="panel-body">
+                <form [formGroup]="modProdForm">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                        <p *ngIf="modProdForm.controls.name.dirty && modProdForm.controls.name.invalid" class="text text-danger">
+                            Please provide a product name</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" formControlName="description">
+                        <p *ngIf="modProdForm.controls.description.dirty && modProdForm.controls.description.invalid" class="text text-danger">
+                            Please provide description</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" class="form-control" formControlName="price">
+                        <p *ngIf="modProdForm.controls.price.dirty && modProdForm.controls.price.invalid" class="text text-danger">
+                            Invalid amount</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="number" class="form-control" formControlName="quantity">
+                        <p *ngIf="modProdForm.controls.quantity.dirty && modProdForm.controls.quantity.errors" class="text text-danger">
+                            Invalid quantity</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Discount</label>
+                        <input type="number" class="form-control" formControlName="discount">
+                        <p *ngIf="modProdForm.controls.discount.dirty && modProdForm.controls.discount.errors" class="text text-danger">
+                            Invalid Discount</p>
+                    </div>
+
+                    <button type="submit" (click)="onSubmit()" [disabled]="modProdForm.invalid" class="btn btn-primary">Save</button>
+                    <button (click)="cancel()" class="btn btn-default">Cancel</button>
+                </form>
+                <div *ngIf="errorMessage!=null">
+                    <!-- Display error message -->
+                    <span class="text text-danger"> {{ errorMessage }} </span>
+                </div>
+                <div *ngIf="modifyProdDetails!=null"> -->
+                    <!-- Display success message -->
+                    <span class="text text-success">
+                        {{modifyProdDetails}}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-5 col-md-offset-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Login Form</div>
+      <div class="panel-body">
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <label for="emailId">Email Id</label>
+            <input type="text" class="form-control" formControlName="emailId">
+            <p *ngIf="loginForm.controls.emailId.dirty && loginForm.controls.emailId.invalid" class="alert alert-danger">Invalid email!</p>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <p *ngIf="loginForm.controls.password.dirty && loginForm.controls.password.invalid" class="alert alert-danger">Invalid password format!</p>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Login as</label>
+            <input type="radio" value="customer" formControlName="loginType">Customer
+            <input type="radio" value="seller" formControlName="loginType">Seller
+          </div>
+          <button type="submit" (click)="onLogin()" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+
+        </form>
+        <div *ngIf="errorMessage">
+          <!-- Display error message -->
+          <span class="text text-danger"> {{ errorMessage }} </span>
+        </div>
+        <div *ngIf="successMessage">
+          <!-- Display error message -->
+          <span class="text text-success"> {{ successMessage }} </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

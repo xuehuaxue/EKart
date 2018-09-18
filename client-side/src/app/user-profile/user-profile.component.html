@@ -1,0 +1,52 @@
+<div class="col-md-12">
+  <form [formGroup]="updateDetailForm">
+
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <td style="width:50%">
+            <img src="https://robohash.org/{{randNum}}" class="img-responsive" style="max-width:150px;">
+          </td>
+          <td style="vertical-align: bottom;">
+            <button (click)="enableEdit=!enableEdit">Edit</button>
+            <button *ngIf="enableEdit" (click)="changeDetails()" [disabled]="updateDetailForm.invalid">Submit</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Name: {{ user.name }}</td>
+          <td *ngIf="enableEdit">
+            <input type="text" class="form-control" formControlName="name">
+            <p *ngIf="updateDetailForm.controls.name.dirty && updateDetailForm.controls.name.invalid" class="alert alert-danger">Invalid name format!</p>
+        </tr>
+        <tr>
+          <td>password: {{ user.password | pwPipe:user.password }}</td>
+          <td *ngIf="enableEdit">
+            <input type="password" class="form-control" formControlName="password">
+            <p *ngIf="updateDetailForm.controls.password.dirty && updateDetailForm.controls.password.invalid" class="alert alert-danger">Invalid password format!</p>
+        </tr>
+        <tr>
+          <td>Email: {{ user.emailId }}</td>
+        <tr>
+          <td>Contact No: {{ user.phoneNumber }}</td>
+          <td *ngIf="enableEdit">
+            <input type="text" class="form-control" required formControlName="phoneNumber">
+            <p *ngIf="updateDetailForm.controls.phoneNumber.dirty && updateDetailForm.controls.phoneNumber.invalid" class="alert alert-danger">Invalid phone number format!</p>
+        </tr>
+        <tr>
+          <td>Address: {{ user.address }}</td>
+          <td *ngIf="enableEdit">
+            <input type="text" class="form-control" formControlName="address">
+            <p *ngIf="updateDetailForm.controls.address.dirty && updateDetailForm.controls.address.invalid" class="alert alert-danger">Invalid address format!</p>
+        </tr>
+        <div *ngIf="errorMessage">
+          <!-- Display error message -->
+          <span id="formControlName" class="text text-danger"> {{ errorMessage }} </span>
+        </div>
+        <div *ngIf="successMessage">
+          <!-- Display error message -->
+          <span id="formControlName" class="text text-success"> {{ successMessage }} </span>
+        </div>
+      </table>
+    </div>
+  </form>
+</div>
