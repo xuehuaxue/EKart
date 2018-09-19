@@ -25,7 +25,7 @@ export class AddProductComponent implements OnInit {
   onSubmit() {
     let form = this.addProductForm.value;  // get the form value
     form.emailId = JSON.parse(localStorage.getItem("loginSeller")).emailId;  // get the authenticated seller's email id from the localStorage
-    this.service.addProduct(form) // call addProduct(form) to add the new product to db
+    this.service.addProduct(form) // call addProduct(form) to call addProduct(form), whiich will add the new product to db
       .subscribe(data => {
         this.successMessage = "Successfully added the product!"  // if succeed show the message
         this.addProductForm.reset();
