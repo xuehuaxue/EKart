@@ -10,21 +10,25 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  // navigation bar component
+
   constructor(private authManager: AuthManagerService, private router:Router) { }
-  isSellerLogin:boolean = false;
+  // if sellerLogin or customerLogin, "view profile" and "logout" options are displayed,
+  // otherwise "register" and "login" are displayed.
+  isSellerLogin:boolean = false;  // used to check user login, intialized to false
   isCustomerLogin:boolean = false;
   userName = localStorage.getItem("username");
 
   checkLogin(){
-    let status = this.authManager.checkLogin();
+    let status = this.authManager.checkLogin(); // check if anyone login and set either sellerLogin or custLogin to true, or both to false
     this.isSellerLogin = status.sellerLogin
     this.isCustomerLogin = status.customerLogin;
   }
 
   logout(){
-    localStorage.clear();
+    localStorage.clear();  // destory the localStorage makes user logout
     console.log("the seller object is "+localStorage.isSellerLogin);
-    this.checkLogin();
+    this.checkLogin();  // update the navigation bar
     this.router.navigate(["/home"]);
   }
 

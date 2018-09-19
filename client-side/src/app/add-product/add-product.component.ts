@@ -10,24 +10,24 @@ import { SellerProductService } from '../seller-product.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-
+  // this component is used for seller to add new product
   errorMessage: string;
   successMessage: string;
-  prodList: Product[];
-  addProductForm: FormGroup;
+  prodList: Product[];  // product list
+  addProductForm: FormGroup;  // add product form
   categoryList = ["Clothing - Kids", "Clothing - Men", "Clothing - Women", "Electronics - Camera",
     "Electronics - Desktop", "Electronics - Laptop", "Electronics - Mobile", "Electronics - Other Appliances",
-    "Home - Decor", "Home - Furniture", "Home - Kitchen", "Sports"];
+    "Home - Decor", "Home - Furniture", "Home - Kitchen", "Sports"];  // all category list
 
   constructor(private formBuilder: FormBuilder, private service: SellerProductService) { }
 
-  // on submit is gonna add new products to the db
+  // this is gonna be called when the form is submitted
   onSubmit() {
-    let form = this.addProductForm.value;
-    form.emailId = JSON.parse(localStorage.getItem("loginSeller")).emailId;
-    this.service.addProduct(form)
+    let form = this.addProductForm.value;  // get the form value
+    form.emailId = JSON.parse(localStorage.getItem("loginSeller")).emailId;  // get the authenticated seller's email id from the localStorage
+    this.service.addProduct(form) // call addProduct(form) to add the new product to db
       .subscribe(data => {
-        this.successMessage = "Successfully added the product!"
+        this.successMessage = "Successfully added the product!"  // if succeed show the message
         this.addProductForm.reset();
       },
       error => {
@@ -35,11 +35,11 @@ export class AddProductComponent implements OnInit {
       })
   }
 
-  cancel() {
+  cancel() {  // go back to previous page
     window.history.back();
   }
 
-  ngOnInit() {
+  ngOnInit() {  // reactive form is used to build the add product form, validators are used to check inputted values
     this.addProductForm = this.formBuilder.group({
       name: ["", [Validators.required, Validators.pattern('^[A-Za-z][A-Za-z ]*[A-Za-z]$')]],
       description: ["", [Validators.required, Validators.minLength(10)]],

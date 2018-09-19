@@ -13,6 +13,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 export class SellerChangeProductComponent implements OnInit {
 
+  // component to handle product details change
   constructor(private route: ActivatedRoute, private service: SellerProductService, private formBuilder: FormBuilder) { }
 
   error: any;
@@ -27,13 +28,12 @@ export class SellerChangeProductComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.productId = params['id']; //fetch the value of id
+      this.productId = params['id']; //fetch the product ID from the url
       this.product = JSON.parse(localStorage.sellerProducts).filter(prod => prod.productId == this.productId)[0];
-
-      // this.product = localStorage.sellerProducts.filter(prod => prod.productId == this.productId);
-      // console.log(this.product);
+      // search through the localStorage to find product that has matched productId. A list with only ONE result will be returned.
     });
 
+    // reactive form is used for form of changing product details
     this.modProdForm = this.formBuilder.group({
       name: [this.product.name, [Validators.required, Validators.pattern('^[A-Za-z][A-Za-z ]*[A-Za-z]$')]],
       description: [this.product.description, [Validators.required, Validators.minLength(10)]],
@@ -47,11 +47,11 @@ export class SellerChangeProductComponent implements OnInit {
   }
 
 
-  onSubmit() {  // call to change product detail
+  onSubmit() {  // call on form submit
     let form = this.modProdForm.value;
-    form.emailId = JSON.parse(localStorage.getItem("loginSeller")).emailId;
+    form.emailId = JSON.parse(localStorage.getItem("loginSeller")).emailId;  // get login seller's emailId
     console.log(form);
-    this.service.modifyProduct(form)
+    this.service.modifyProduct(form)  // call modifyProduct(form), which will call apis to perform product update in the db.
       .subscribe(data => {
         this.successMessage = "Successfully updated the product!"
         this.cancel(); //even though the name is cancel, it is actually go back
@@ -59,7 +59,6 @@ export class SellerChangeProductComponent implements OnInit {
       , error => this.errorMessage = "Please try again!"
       )
   }
-
 
 
   cancel() {

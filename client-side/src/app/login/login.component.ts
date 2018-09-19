@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  // login compnents
+
   constructor(private formBuilder: FormBuilder, private service: AuthManagerService, private router: Router) { }
   loginForm: FormGroup;
   errorMessage: string;
@@ -20,9 +22,9 @@ export class LoginComponent implements OnInit {
 
     let sellerProfile = this.loginForm.value;
 
-    if (this.loginForm.value.loginType == "seller") {
+    if (this.loginForm.value.loginType == "seller") { //user login as a seller
 
-      this.service.sellerLogin(this.loginForm.value)
+      this.service.sellerLogin(this.loginForm.value) // pass the form to sellerLogin(form) function
         .subscribe(data => {
           console.log("you are succesfully login in!" + data);
           localStorage.setItem("userType", "seller");
@@ -39,8 +41,8 @@ export class LoginComponent implements OnInit {
           this.errorMessage = "login fails, please try again";
         })
 
-    } else {
-      this.service.customerLogin(this.loginForm.value)
+    } else { //user login as a customer
+      this.service.customerLogin(this.loginForm.value) //pass the form to customerLogin() function
         .subscribe(data => {
           localStorage.setItem("loginCustomer", JSON.stringify(data));
           localStorage.setItem("userType", "customer");
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  ngOnInit() {
+  ngOnInit() { // reactive form is used to build the login form and validators are used to check input validity
     this.loginForm = this.formBuilder.group({
       emailId: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],

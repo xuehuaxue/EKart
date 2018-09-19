@@ -10,7 +10,7 @@ import { AllProductsComponent } from '../all-products/all-products.component'
 import { AddProductComponent } from '../add-product/add-product.component';
 import { SellerChangeProductComponent } from '../seller-change-product/seller-change-product.component'
 
-
+// manages all routes
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent},
   { path: 'login', component: LoginComponent},

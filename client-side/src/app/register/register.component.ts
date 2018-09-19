@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 
 export class RegisterComponent implements OnInit {
+  // manage seller or customer registration
 
   constructor(private formBuilder: FormBuilder, private service: AuthManagerService, private router: Router) { }
 
@@ -19,19 +20,18 @@ export class RegisterComponent implements OnInit {
   errorMessage: string;
   successMessage: string;
 
-
   onRegister() {
-    if (this.registerForm.value.registerType == "seller") {
-      this.service.sellerRegister(this.registerForm.value)
+    if (this.registerForm.value.registerType == "seller") {  // registerType is seller
+      this.service.sellerRegister(this.registerForm.value)  // call sellerRegister(form), which calls corresponding api to insert new seller entity to the database
         .subscribe(data => {
           this.successMessage = "Account is successfully registered!";
-          this.router.navigate(['/']);
+          this.router.navigate(['/']);  // go back to home page after successfully registered
         },
         error => {
           this.errorMessage = "Registered failed, please again!";
         })
     } else {  // registerType is customer
-      this.service.customerRegister(this.registerForm.value)
+      this.service.customerRegister(this.registerForm.value) // call customerRegister(form), which calls corresponding api to insert new cust entity to the database
         .subscribe(data => {
           this.successMessage = "Account is successfully registered!";
           this.router.navigate(['/']);
@@ -44,7 +44,8 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // reactive form is used to build the sign up form, and validators are used
+    // notice pdValidator is a custom validator used to check password format(see validators.module.ts for detail)
     this.registerForm = this.formBuilder.group({
       emailId: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, pdValidator]],

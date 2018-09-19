@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  // home page component, banner is implement in the frontend. And all-product component is also used in this component to display all products
   constructor() { }
 
   ngOnInit() {
