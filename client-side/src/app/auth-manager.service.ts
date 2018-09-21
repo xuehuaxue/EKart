@@ -10,7 +10,7 @@ import { Product } from './classes/product'
 export class AuthManagerService {
 
   constructor(private http: Http) { }
-  private getAllUrl: string = "./assets/test.json";  // get all user's product
+  private getAllUrl: string = "./assets/test.json";  // this is a test for GET, actual getAllProduct() is implement in all-product service
 
   private sellerloginUrl: string = "http://localhost:8081/EKart/SellerAPI/login";  // url for logging in
   private customerloginUrl: string = "http://localhost:8081/EKart/CustomerAPI/login";
