@@ -17,4 +17,4 @@ The app provides few key features:
 The frontend is completely designed and built by me.
 
 see [my wix blog](https://xuchen323.wixsite.com/website/single-post/2018/09/11/EKart----A-web-shop-application)for detail screenshots and walkthrough.
- To run the application, first install npm and [Angular](https://angular.io/guide/quickstart). After that, please run npm install, following by ng serve --open. The browser will automatically open.
+ To run the application, first install [Node.js](https://nodejs.org/en/) and [Angular](https://angular.io/guide/quickstart). After that, please run ```npm install```, following by ```ng serve --open```. The browser will automatically open.
