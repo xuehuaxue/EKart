@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../classes/product';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { pdValidator } from '../validators/validators.module';
-import { SellerProductService } from '../Services/seller-product.service';
+import { SellerProductService } from '../services/seller-product.service';
 
 @Component({
   selector: 'app-add-product',

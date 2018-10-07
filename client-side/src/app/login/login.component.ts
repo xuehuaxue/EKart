@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorage, SessionStorage } from "angular-local-storage/dist/angular-local-storage.min.js";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthManagerService } from '../Services/auth-manager.service'
+import { AuthManagerService } from '../services/auth-manager.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,20 +10,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  // login compnents
+  // login compnents, which handles both seller login and customer login
 
   constructor(private formBuilder: FormBuilder, private service: AuthManagerService, private router: Router) { }
-  loginForm: FormGroup;
-  errorMessage: string;
-  successMessage: string;
+  loginForm: FormGroup;  // form for login
+  errorMessage: string;  // store error message
+  successMessage: string;  // store successMessage
 
   onLogin() {
 
-    let sellerProfile = this.loginForm.value;
-
+    // loginType is a radio option, used to check whether the user is a seller or a customer
     if (this.loginForm.value.loginType == "seller") { //user login as a seller
 
-      this.service.sellerLogin(this.loginForm.value) // pass the form to sellerLogin(form) function
+      this.service.sellerLogin(this.loginForm.value) // pass the form to sellerLogin(form) function,
+      // which will make http request to fetch data in JSON format, then store the data to localStorage
         .subscribe(data => {
           console.log("you are succesfully login in!" + data);
           localStorage.setItem("userType", "seller");
@@ -34,26 +33,26 @@ export class LoginComponent implements OnInit {
           this.successMessage = "welcome back, " + data.name;
           this.errorMessage = null;
           location.reload();
-          this.router.navigate(['/']);
+          this.router.navigate(['/']);  // return to home page after successfully sign in
         },
-        error => {
-          this.successMessage = null;
-          this.errorMessage = "login fails, please try again";
-        })
+        () => {
+            this.successMessage = null;
+            this.errorMessage = "login fails, please try again"; // if error, show this message
+          })
 
     } else { //user login as a customer
-      this.service.customerLogin(this.loginForm.value) //pass the form to customerLogin() function
-        .subscribe(data => {
+      this.service.customerLogin(this.loginForm.value) //pass the form to customerLogin(form) function
+        .subscribe(data => {  // if login successfully, store the data into localStorage
           localStorage.setItem("loginCustomer", JSON.stringify(data));
           localStorage.setItem("userType", "customer");
           localStorage.setItem("username", data.name);
           location.reload();
-          this.router.navigate(['/'])
+          this.router.navigate(['/']) // return to home page
         },
-        error => {
-          this.successMessage = null;
-          this.errorMessage = "login fails, please try again";
-        })
+        () => {
+            this.successMessage = null;
+            this.errorMessage = "login fails, please try again"; // if error, show this message
+          })
     }
   }
 

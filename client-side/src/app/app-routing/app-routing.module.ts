@@ -10,7 +10,7 @@ import { AllProductsComponent } from '../all-products/all-products.component'
 import { AddProductComponent } from '../add-product/add-product.component';
 import { SellerChangeProductComponent } from '../seller-change-product/seller-change-product.component'
 
-// manages all routes
+// manages all routes in this application
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent},
   { path: 'login', component: LoginComponent},
@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'viewAllProducts', component: AllProductsComponent},
   { path: 'sellerProfile/newProduct', component: AddProductComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'modifyProduct/:id', component: SellerChangeProductComponent }
+  { path: 'modifyProduct/:id', component: SellerChangeProductComponent }  // example: modyProduct/1001 will show product 1001
 ];
 
 @NgModule({

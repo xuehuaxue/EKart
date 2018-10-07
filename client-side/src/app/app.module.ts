@@ -12,15 +12,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SellerProfileComponent } from './seller-profile/seller-profile.component';
 import { PwPipePipe } from './Pipes/pw-pipe.pipe';
 import { ValidatorsModule } from './validators/validators.module'
-import { AuthManagerService } from './Services/auth-manager.service';
+import { AuthManagerService } from './services/auth-manager.service';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { AllProductsComponent } from './all-products/all-products.component'
 import { HttpModule }     from '@angular/http';
-import { AllProductsService } from './Services/all-products.service';
+import { AllProductsService } from './services/all-products.service';
 import { AddProductComponent } from './add-product/add-product.component';
 import { SellerAllProductsComponent } from './seller-all-products/seller-all-products.component';
 import { SellerChangeProductComponent } from './seller-change-product/seller-change-product.component'
-import { SellerProductService } from './Services/seller-product.service';
+import { SellerProductService } from './services/seller-product.service';
 
 @NgModule({
   declarations: [

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../classes/product';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { SellerProductService } from '../Services/seller-product.service'
+import { SellerProductService } from '../services/seller-product.service'
 import 'rxjs/add/operator/switchMap';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
