@@ -2,7 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { User } from '../classes/user'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { pdValidator } from '../validators/validators.module';
-import { AuthManagerService } from '../auth-manager.service';
+import { AuthManagerService } from '../Services/auth-manager.service';
 
 @Component({
   selector: 'app-user-profile',

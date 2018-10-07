@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { pdValidator } from '../validators/validators.module';
-import { AuthManagerService } from '../auth-manager.service'
+import { AuthManagerService } from '../Services/auth-manager.service'
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LocalStorage, SessionStorage} from "angular-local-storage/dist/angular-local-storage.min.js";
-import { AuthManagerService } from '../auth-manager.service'
+import { AuthManagerService } from '../Services/auth-manager.service'
 import { Router } from '@angular/router';
 
 @Component({
