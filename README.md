@@ -7,7 +7,7 @@ EKart is a web shop application. It was built using Angular, Bootstrap and jQuer
  
 I was responsible to build the frontend from scatch, which is the codes in this repo. Due to the fact that the backend-side contains skeleton codes from Infosys and it was done by the backend team, I didn't include it in this repo.
 
-### Remeber, this app doesn't store product images in url, all product images are randomly generate using "https://picsum.photos/150/150/?random"
+> Remeber, this app doesn't store product images in the database, all product images are randomly generate using "https://picsum.photos/150/150/?random"
 
 The app provides few key features:
 
