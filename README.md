@@ -2,11 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
 
-Due to the fact that the backend-side contains skeleton codes from Infosys, I didn't include them in this repo.
-
 # Description
 EKart is a web shop application. It was built using Angular, Bootstrap and jQuery as Frontend, Hibernate and Oracle as Database, and Spring framework as Backend. The development of the project loosely followed the methodology of SCRUM.
  
+I was responsible to build the frontend from scatch, which is the codes in this repo. Due to the fact that the backend-side contains skeleton codes from Infosys and it was done by the backend team, I didn't include it in this repo.
+
+### Remeber, this app doesn't store product images in url, all product images are randomly generate using "https://picsum.photos/150/150/?random"
+
 The app provides few key features:
 
 - User registration/login either as Seller or Customer.
@@ -14,7 +16,5 @@ The app provides few key features:
 - Display all products.
 - Seller can add new products, or modify product details.
 
-The frontend is completely designed and built by me.
-
-see [my wix blog](https://xuchen323.wixsite.com/website/single-post/2018/09/11/EKart----A-web-shop-application)for detail screenshots and walkthrough.
- To run the application, first install [Node.js](https://nodejs.org/en/) and [Angular](https://angular.io/guide/quickstart). After that, please run ```npm install```, following by ```ng serve --open```. The browser will automatically open.
+see [my wix blog](https://xuchen323.wixsite.com/website/single-post/2018/09/11/EKart----A-web-shop-application) for detail screenshots and walkthrough.
+ To run the application, first install [Node.js](https://nodejs.org/en/), then install angular  [Angular](https://angular.io/guide/quickstart) by running ```npm install -g @angular/cli```. After this step, please run ```npm install``` to install all necessary modules, following by ```ng serve --open```. This will run the app and the browser will automatically open.

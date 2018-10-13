@@ -10,7 +10,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SellerProfileComponent } from './seller-profile/seller-profile.component';
-import { PwPipePipe } from './Pipes/pw-pipe.pipe';
+import { PwPipePipe } from './pipes/pw-pipe.pipe';
 import { ValidatorsModule } from './validators/validators.module'
 import { AuthManagerService } from './services/auth-manager.service';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';

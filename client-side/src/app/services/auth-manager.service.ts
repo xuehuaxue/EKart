@@ -9,8 +9,10 @@ import { Product } from '../classes/product'
 @Injectable()
 export class AuthManagerService {
 
+  // this service is used to manage the authentication of seller and customers,
+  // including seller login, customer login, seller register, customer registers,
+  // and seller update details.
   constructor(private http: Http) { }
-  private getAllUrl: string = "./assets/test.json";  // this is a test for GET, actual getAllProduct() is implement in all-product service
 
   private sellerloginUrl: string = "http://localhost:8081/EKart/SellerAPI/login";  // url for logging in
   private customerloginUrl: string = "http://localhost:8081/EKart/CustomerAPI/login";
@@ -32,14 +34,8 @@ export class AuthManagerService {
     console.log(status);
     return status;
   }
-  
-  getProducts(): Observable<Product[]> {
-    return this.http.get(this.getAllUrl)
-      .map((response: Response) => response.json())
-      .do(data => console.log("All: " + JSON.stringify(data)))
-      .catch(this.handleError);
-  }
 
+  // use for seller login, make a http request
   sellerLogin(data){
     return this.http.post(this.sellerloginUrl, data)
       .map((response: Response) => response.json())
@@ -47,6 +43,7 @@ export class AuthManagerService {
       .catch(this.handleError);
   }
 
+  // use for customer login
   customerLogin(data){
     return this.http.post(this.customerloginUrl, data)
       .map((response: Response) => response.json())
@@ -54,6 +51,7 @@ export class AuthManagerService {
       .catch(this.handleError);
   }
 
+  // use for custome register
   customerRegister(data){
     data.address = null; //we skip the address Model
     return this.http.post(this.customerRegisterUrl, data)
@@ -62,6 +60,7 @@ export class AuthManagerService {
     .catch(this.handleError);
   }
 
+  // use for seller register
   sellerRegister(data){
     return this.http.post(this.sellerRegUrl, data)
       .map((response: Response) => response.json())
@@ -69,6 +68,7 @@ export class AuthManagerService {
       .catch(this.handleError);
   }
 
+  // use to update details
   sellerUpdateDetail(data){
     return this.http.post(this.sellerUpdateUrl, data)
       .map((response: Response) => response.json())
