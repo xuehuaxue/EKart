@@ -4,6 +4,11 @@
 {"name": "Micheal Khors handbag", "productId":"6", "description":"fashion", "category":"cloth/accessory", "brand":"MK", "price":"170.50", "discount":"25", "quantity":"200"},
 {"name": "The North Face Coat", "productId":"17", "description":"the best partner for winter", "category":"Cloth/Accessory", "brand":"The North Face ", "price":"225.00", "discount":"50", "quantity":"200"},
 {"name": "Macbook", "productId":"23", "description":"this is the macbook", "category":"laptop", "brand":"apple ", "price":"2225.00", "discount":"10", "quantity":"10"},
-{"name": "LG LV30", "productId":"93", "description":"this is the lg's newest smartphone", "category":"mobile", "brand":"lg ", "price":"925.00", "discount":"5", "quantity":"10"}
+{"name": "LG LV30", "productId":"93", "description":"this is the lg's last year's smartphone", "category":"mobile", "brand":"lg ", "price":"925.00", "discount":"35", "quantity":"10"},
+{"name": "LG LV40", "productId":"95", "description":"this is the lg's newest smartphone", "category":"mobile", "brand":"lg ", "price":"955.00", "discount":"5", "quantity":"10"},
+{"name": "Galaxy note 10", "productId":"96", "description":"this is the Samsung's newest smartphone", "category":"mobile", "brand":"samsung ", "price":"995.00", "discount":"5", "quantity":"20"},
+{"name": "Iphone XR", "productId":"87", "description":"apple is here", "category":"mobile", "brand":"apple ", "price":"755.00", "discount":"5", "quantity":"10"},
+{"name": "Iphone XS", "productId":"52", "description":"this is the apple's newest smartphone", "category":"mobile", "brand":"apple ", "price":"955.00", "discount":"5", "quantity":"10"},
+{"name": "Iphone XS MAX", "productId":"101", "description":"apple's newest innovation is here", "category":"mobile", "brand":"apple ", "price":"1225.00", "discount":"5", "quantity":"20"}
 
 ]
