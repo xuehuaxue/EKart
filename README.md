@@ -17,4 +17,4 @@ The app provides few key features:
 - Seller can add new products, or modify product details.
 
 see [my wix blog](https://xuchen323.wixsite.com/website/single-post/2018/09/11/EKart----A-web-shop-application) for detail screenshots and walkthrough.
- To run the application, first move to client-side folder by run ```cd client-side``` in the terminal, then install [Node.js](https://nodejs.org/en/), next install angular[Angular](https://angular.io/guide/quickstart) by running ```npm install -g @angular/cli```. After this step, please run ```npm install``` to install all necessary modules, following by ```ng serve --open```. This will run the app and the browser will automatically open.
+ To run the application, first move to client-side folder by run ```cd client-side``` in the terminal, then install [Node.js](https://nodejs.org/en/), next install [Angular](https://angular.io/guide/quickstart) by running ```npm install -g @angular/cli```. After this step, please run ```npm install``` to install all necessary modules, following by ```ng serve --open```. This will run the app and the browser will automatically open.
