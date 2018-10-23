@@ -22,8 +22,19 @@ export class SellerProductService {
       .catch(this.handleError);
   }
 
+  // // this is the function to fetch all product under the seller's account
+  // // for demonstration purpose, I will use a DUMMY DATA since the backend is missing 
+  // getSellerProd(data) {
+  //   return this.http.post(this.getProductUrl, data)
+  //     .map((response: Response) => response.json())
+  //     // .do(data => console.log("All: " + JSON.stringify(data)))
+  //     .catch(this.handleError);
+  // }
+
+  // this IS NOT THE REAL function that make POST request to the backend and fetch all product under the 
+  // seller's account. It is simply for demonstration purpose ONLY! 
   getSellerProd(data) {
-    return this.http.post(this.getProductUrl, data)
+    return this.http.get("./assets/dummySellerProducts.json")
       .map((response: Response) => response.json())
       // .do(data => console.log("All: " + JSON.stringify(data)))
       .catch(this.handleError);

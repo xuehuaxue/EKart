@@ -30,7 +30,7 @@ export class SellerAllProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(localStorage.getItem("sellerProducts")){
+    if(localStorage.getItem("sellerProducts") != "undefined"){
       this.productList = JSON.parse(localStorage.getItem("sellerProducts"));
     }
     this.getAllProduct();

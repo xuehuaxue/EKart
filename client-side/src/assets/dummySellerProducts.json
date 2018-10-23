@@ -1,0 +1,7 @@
+[
+{"name": "Macbook", "productId":"23", "description":"this is the macbook", "category":"laptop", "brand":"apple ", "price":"2225.00", "discount":"10", "quantity":"10"},
+{"name": "LG LV30", "productId":"93", "description":"this is the lg's last year's smartphone", "category":"mobile", "brand":"lg ", "price":"925.00", "discount":"35", "quantity":"10"},
+{"name": "LG LV40", "productId":"95", "description":"this is the lg's newest smartphone", "category":"mobile", "brand":"lg ", "price":"955.00", "discount":"5", "quantity":"10"},
+{"name": "Galaxy note 10", "productId":"96", "description":"this is the Samsung's newest smartphone", "category":"mobile", "brand":"samsung ", "price":"995.00", "discount":"5", "quantity":"20"},
+{"name": "Iphone XR", "productId":"87", "description":"apple is here", "category":"mobile", "brand":"apple ", "price":"755.00", "discount":"5", "quantity":"10"}
+]

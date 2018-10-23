@@ -35,10 +35,10 @@ export class SellerChangeProductComponent implements OnInit {
 
     // reactive form is used for form of changing product details
     this.modProdForm = this.formBuilder.group({
-      name: [this.product.name, [Validators.required, Validators.pattern('^[A-Za-z][A-Za-z ]*[A-Za-z]$')]],
+      name: [this.product.name, [Validators.required, Validators.pattern('^[A-Za-z][A-Za-z0-9 ]*[A-Za-z0-9]$')]],
       description: [this.product.description, [Validators.required, Validators.minLength(10)]],
       category: [this.product.category, Validators.required],
-      brand: [this.product.brand, [Validators.required, Validators.minLength(3), Validators.pattern('^[A-Za-z][A-Za-z ]+[A-Za-z]$')]],
+      brand: [this.product.brand],
       price: [this.product.price, [Validators.required, Validators.min(1)]],
       discount: [this.product.discount, [Validators.required, Validators.min(0), Validators.max(100)]],
       quantity: [this.product.quantity, [Validators.required, Validators.min(1)]],

@@ -22,7 +22,7 @@
           <td>password: {{ user.password | pwPipe:user.password }}</td>
           <td *ngIf="enableEdit">
             <input type="password" class="form-control" formControlName="password">
-            <p *ngIf="updateDetailForm.controls.password.dirty && updateDetailForm.controls.password.invalid" class="alert alert-danger">Invalid password format!</p>
+            <p *ngIf="updateDetailForm.controls.password.dirty && updateDetailForm.controls.password.invalid" class="alert alert-danger"><small>Must be between 6-20 chars and contains uppercase, lowercase, numbers and special characters!</small></p>
         </tr>
         <tr>
           <td>Email: {{ user.emailId }}</td>

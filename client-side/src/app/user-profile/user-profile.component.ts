@@ -49,7 +49,7 @@ export class UserProfileComponent implements OnInit {
     this.getUser(localStorage.getItem("userType"));  // check userType, then set either customer or seller to the user variable
     this.updateDetailForm = this.formBuilder.group({   // initialize a reactive form, validators are used here to check inputted value validity
       emailId: [this.user.emailId, Validators.required],
-      password: [this.user.password, Validators.required],
+      password: [this.user.password, [Validators.required, pdValidator]],
       name: [this.user.name, [Validators.required, Validators.pattern('^[A-Za-z][A-Za-z ]*[A-Za-z]$')]],
       phoneNumber: [this.user.phoneNumber, [Validators.required, Validators.pattern('[0-9]{10}')]],
       address: [this.user.address, [Validators.required, Validators.minLength(10)]],

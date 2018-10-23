@@ -41,7 +41,7 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit() {  // reactive form is used to build the add-product-form, validators are used to check inputted values
     this.addProductForm = this.formBuilder.group({
-      name: ["", [Validators.required, Validators.pattern('^[A-Za-z][A-Za-z ]*[A-Za-z]$')]], // use regex to check name format
+      name: ["", [Validators.required, Validators.pattern('^[A-Za-z][A-Za-z0-9 ]*[A-Za-z0-9]$')]], // use regex to check name format
       description: ["", [Validators.required, Validators.minLength(10)]],  // description has to be greater than 10 chars
       category: ["", Validators.required],
       brand: ["", [Validators.required, Validators.minLength(3), Validators.pattern('^[A-Za-z][A-Za-z ]+[A-Za-z]$')]],

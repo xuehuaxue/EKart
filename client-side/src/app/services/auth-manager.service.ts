@@ -35,12 +35,22 @@ export class AuthManagerService {
     return status;
   }
 
-  // use for seller login, make a http request
+  // // this is the REAL FUNCTION that make http request to the backend, since backend is missing
+  // // for demostration purpose, I will use a fake user ("./assets/dummyUser.json") for seller login
+  // // use for seller login, make a http request
+  // sellerLogin(data){
+  //   return this.http.post(this.sellerloginUrl, data)
+  //     .map((response: Response) => response.json())
+  //     .do(data => console.log("All: " + JSON.stringify(data)))
+  //     .catch(this.handleError);
+  // }
+
+  // this is NOT the real seller login function, it uses a dummy seller, just for demonstration purpose!
   sellerLogin(data){
-    return this.http.post(this.sellerloginUrl, data)
-      .map((response: Response) => response.json())
-      .do(data => console.log("All: " + JSON.stringify(data)))
-      .catch(this.handleError);
+    return this.http.get("./assets/dummySeller.json")
+    .map((response: Response) => <Product[]>response.json())
+    .do(data => console.log("All: " + JSON.stringify(data)))
+    .catch(this.handleError);
   }
 
   // use for customer login
