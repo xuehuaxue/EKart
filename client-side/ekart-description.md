@@ -1,4 +1,4 @@
-#Ekart – Frontend
+# Ekart – Frontend
 
 >EKart is a web shop application. It was built using Angular, Bootstrap and jQuery for the Frontend, Oracle SQL for Database, and Spring framework and Hibernate for the Backend. 
 
@@ -13,13 +13,13 @@ Here are details of the functions supporting by the app:
 
 Please see my blog for detail screenshots and walkthrough of the full application.
 
-##How to run the frontend
+## How to run the frontend
 
 To run the application, first install Node.js and run npm install -g @angular/cli in the terminal. After both are installed, please move into client-side folder, then run npm install to install all necessary modules. After that, simply run ng serve –open to run the app and the browser will automatically open.
 
 For demonstration purpose, I have change a few functions. Instead of making http request to the backend, it is simply going to read dummy data stored in JSON objects, they can be found at “/assets”. No request to backend was made on this demo (since backend is missing in this repo). 
 
-##User Guide
+## User Guide
 * Once the browser is open, you will see the homepage. Within the homepage you can find all products from the system. like I have mentioned earlier, these are dummy data stored in “/assets/dummyProducts.” To see the actual method that communicate with the backend, please refer to “all-products.service.ts” and check the functions that I have commented out. Also, all product images are randomly generated, they are just there for visual purpose.
 
 * Please click “register” button to try to register an account. Every field has a input validator, for example, the password should have a length of 6 to 20 characters, and it should be the combination of uppercase letter, lowercase letter, special characters and numbers. The submit button will stay inactive unless all field have met the correct format.
